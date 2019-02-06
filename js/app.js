@@ -1,9 +1,11 @@
+// adds winning text when game is won
 var winBox = document.querySelector(".win-text");
 
 // HTML text template to add when winning the game
 var winHTML = `<h3>You Made It!</h3>
                 <p>Play Again?</p>
             <button id="reload" name="replay" type="button">Start</button>`;
+
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
   // Variables applied to each of our instances go here,
@@ -81,8 +83,8 @@ Player.prototype.update = function() {
 Player.prototype.playerWin = function() {
   if (this.y < 0) {
     allEnemies = [];
-    //this.x = 200;
-    //this.y = 380;
+    this.x = 200;
+    this.y = 380;
     winBox.innerHTML = winHTML;
 
     // variable for the reset button
